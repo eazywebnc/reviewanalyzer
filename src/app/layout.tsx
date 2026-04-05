@@ -52,10 +52,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "ReviewAnalyzer",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description: "AI-powered review intelligence. Analyze sentiment, extract themes, and get actionable insights from customer reviews.",
+    url: "https://reviewanalyzer.eazyweb.nc",
+    offers: [
+      { "@type": "Offer", price: "0", priceCurrency: "USD", name: "Free" },
+      { "@type": "Offer", price: "29", priceCurrency: "USD", name: "Pro" },
+      { "@type": "Offer", price: "79", priceCurrency: "USD", name: "Business" },
+    ],
+    creator: { "@type": "Organization", name: "EazyWebNC", url: "https://eazyweb.nc" },
+  };
+
   return (
     <html lang="en" className="dark">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-emerald-600 focus:text-white focus:rounded">Skip to content</a>
+        <div id="main-content">
+          {children}
+        </div>
       </body>
     </html>
   );
