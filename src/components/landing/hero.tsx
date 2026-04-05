@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -690,6 +691,37 @@ export function Hero() {
               <div className="text-sm text-zinc-500">{stat.label}</div>
             </motion.div>
           ))}
+        </motion.div>
+
+        {/* Dashboard Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2, type: "spring", stiffness: 80 }}
+          className="mt-16 relative max-w-5xl mx-auto"
+        >
+          {/* Glow effect */}
+          <div className="absolute -inset-4 bg-gradient-to-r from-amber-500/20 via-orange-500/10 to-amber-500/20 rounded-3xl blur-2xl opacity-50" />
+          <div style={{ perspective: "1200px" }}>
+            <motion.div
+              initial={{ rotateX: 6, scale: 0.97 }}
+              whileInView={{ rotateX: 0, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
+              style={{ transformOrigin: "center top" }}
+            >
+              <Image
+                src="/images/dashboard.webp"
+                alt="ReviewAnalyzer Dashboard"
+                width={1200}
+                height={675}
+                className="rounded-2xl border border-white/10 shadow-2xl shadow-black/50"
+                priority
+              />
+            </motion.div>
+          </div>
+          {/* Bottom glow */}
+          <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-amber-500/20 blur-[50px] rounded-full" />
         </motion.div>
       </div>
     </section>
