@@ -46,6 +46,7 @@ export default function LoginPage() {
           setError(error.message);
           return;
         }
+        await fetch('/api/auth/ensure-profile', { method: 'POST' }).catch(() => {});
         router.push("/dashboard");
         router.refresh();
       }
