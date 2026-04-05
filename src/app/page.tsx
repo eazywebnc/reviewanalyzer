@@ -1,3 +1,4 @@
+import { AnimatedMeshBg } from "@/components/landing/animated-bg";
 import { Navbar } from "@/components/landing/navbar";
 import { Hero } from "@/components/landing/hero";
 import { DashboardPreview } from "@/components/landing/dashboard-preview";
@@ -9,7 +10,8 @@ import { Footer } from "@/components/landing/footer";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a]">
+    <div className="relative min-h-screen bg-[#080503]">
+      <AnimatedMeshBg />
       <Navbar />
       <main>
         <Hero />
