@@ -34,12 +34,14 @@ export const metadata: Metadata = {
     description:
       "Turn customer reviews into actionable insights with AI. Analyze sentiment, detect trends, and boost your sales.",
     siteName: "ReviewAnalyzer",
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ReviewAnalyzer - AI-Powered Review Intelligence",
     description:
       "Turn customer reviews into actionable insights with AI.",
+    images: ['/opengraph-image'],
   },
   robots: {
     index: true,
