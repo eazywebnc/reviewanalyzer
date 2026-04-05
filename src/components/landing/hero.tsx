@@ -561,9 +561,23 @@ export function Hero() {
     <section ref={sectionRef} className="relative pt-28 pb-20 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-b from-amber-500/8 via-orange-500/5 to-transparent rounded-full blur-[140px]" />
-        <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-rose-500/5 rounded-full blur-[100px]" />
-        <div className="absolute top-1/3 right-1/4 w-[250px] h-[250px] bg-emerald-500/5 rounded-full blur-[80px]" />
+        {/* Warm radial concentric circle pattern */}
+        <div
+          className="absolute inset-0 opacity-[0.035]"
+          style={{
+            backgroundImage: `
+              radial-gradient(circle at 50% 40%, transparent 80px, rgba(251,191,36,0.4) 81px, transparent 82px),
+              radial-gradient(circle at 50% 40%, transparent 160px, rgba(251,191,36,0.3) 161px, transparent 162px),
+              radial-gradient(circle at 50% 40%, transparent 240px, rgba(245,158,11,0.25) 241px, transparent 242px),
+              radial-gradient(circle at 50% 40%, transparent 320px, rgba(245,158,11,0.2) 321px, transparent 322px),
+              radial-gradient(circle at 50% 40%, transparent 400px, rgba(249,115,22,0.15) 401px, transparent 402px),
+              radial-gradient(circle at 50% 40%, transparent 480px, rgba(249,115,22,0.1) 481px, transparent 482px)
+            `,
+          }}
+        />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[900px] h-[700px] bg-gradient-to-b from-amber-400/10 via-orange-500/8 to-transparent rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 left-1/4 w-[300px] h-[300px] bg-orange-500/6 rounded-full blur-[100px]" />
+        <div className="absolute top-1/3 right-1/4 w-[250px] h-[250px] bg-yellow-500/5 rounded-full blur-[80px]" />
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -586,7 +600,7 @@ export function Hero() {
             className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight"
           >
             Know Exactly How Customers{" "}
-            <span className="bg-gradient-to-r from-amber-400 via-orange-400 to-amber-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-yellow-400 via-amber-400 to-orange-500 bg-clip-text text-transparent">
               Feel About You
             </span>
           </motion.h1>
@@ -619,8 +633,10 @@ export function Hero() {
             className="relative z-10 max-w-[360px] mx-auto"
           >
             <SentimentGauge />
-            {/* Glow behind gauge */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] bg-amber-500/10 rounded-full blur-[80px] -z-10" />
+            {/* Warm glow behind gauge */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-amber-500/15 rounded-full blur-[100px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] bg-orange-400/12 rounded-full blur-[60px] -z-10" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-yellow-500/5 rounded-full blur-[120px] -z-10" />
           </motion.div>
 
           {/* Desktop: orbiting cards */}
