@@ -39,14 +39,14 @@ export const metadata: Metadata = {
     description:
       "Turn customer reviews into actionable insights with AI. Analyze sentiment, detect trends, and boost your sales.",
     siteName: "ReviewAnalyzer",
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'ReviewAnalyzer — AI-Powered Review Intelligence' }],
+    images: [{ url: '/images/og-image.webp', width: 1200, height: 630, type: 'image/webp', alt: 'ReviewAnalyzer — AI-Powered Review Intelligence' }],
   },
   twitter: {
     card: "summary_large_image",
     title: "ReviewAnalyzer - AI-Powered Review Intelligence",
     description:
       "Turn customer reviews into actionable insights with AI.",
-    images: ['/og-image.png'],
+    images: ['/images/og-image.webp'],
   },
   robots: {
     index: true,
