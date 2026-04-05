@@ -45,6 +45,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  alternates: {
+    canonical: 'https://reviewanalyzer.eazyweb.nc',
+  },
 };
 
 export default function RootLayout({
