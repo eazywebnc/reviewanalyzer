@@ -5,6 +5,7 @@ import { DashboardPreview } from "@/components/landing/dashboard-preview";
 import { Features } from "@/components/landing/features";
 import { HowItWorks } from "@/components/landing/how-it-works";
 import { Pricing } from "@/components/landing/pricing";
+import { Testimonials } from "@/components/landing/testimonials";
 import { CTA } from "@/components/landing/cta";
 import { Footer } from "@/components/landing/footer";
 
@@ -19,6 +20,7 @@ export default function HomePage() {
         <Features />
         <HowItWorks />
         <Pricing />
+        <Testimonials />
         <CTA />
       </main>
       <Footer />
