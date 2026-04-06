@@ -48,10 +48,7 @@ export const metadata: Metadata = {
       "Turn customer reviews into actionable insights with AI.",
     images: ['/images/og-image.webp'],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   alternates: {
     canonical: 'https://reviewanalyzer.eazyweb.nc',
   },
@@ -64,18 +61,62 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "ReviewAnalyzer",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    description: "AI-powered review intelligence. Analyze sentiment, extract themes, and get actionable insights from customer reviews.",
-    url: "https://reviewanalyzer.eazyweb.nc",
-    offers: [
-      { "@type": "Offer", price: "0", priceCurrency: "USD", name: "Free" },
-      { "@type": "Offer", price: "29", priceCurrency: "USD", name: "Pro" },
-      { "@type": "Offer", price: "79", priceCurrency: "USD", name: "Business" },
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: "ReviewAnalyzer",
+        url: "https://reviewanalyzer.eazyweb.nc",
+        publisher: {
+          "@type": "Organization",
+          name: "EazyWebNC",
+          url: "https://eazyweb.nc",
+          logo: { "@type": "ImageObject", url: "https://eazyweb.nc/logo.png" },
+        },
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "ReviewAnalyzer",
+        applicationCategory: "BusinessApplication",
+        operatingSystem: "Web",
+        description: "AI-powered review intelligence. Analyze sentiment, extract themes, and get actionable insights from customer reviews.",
+        url: "https://reviewanalyzer.eazyweb.nc",
+        offers: [
+          { "@type": "Offer", price: "0", priceCurrency: "USD", name: "Free" },
+          { "@type": "Offer", price: "29", priceCurrency: "USD", name: "Pro" },
+          { "@type": "Offer", price: "79", priceCurrency: "USD", name: "Business" },
+        ],
+        creator: { "@type": "Organization", name: "EazyWebNC", url: "https://eazyweb.nc" },
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "What is ReviewAnalyzer?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "ReviewAnalyzer is an AI-powered tool that turns customer reviews into actionable insights. It analyzes sentiment, extracts themes, and provides recommendations to improve your products.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Which review platforms does ReviewAnalyzer support?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "ReviewAnalyzer works with reviews from Amazon, Google, Trustpilot, App Store, and more. Simply paste your reviews or connect your accounts to start analyzing.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "How does AI sentiment analysis work?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Our AI reads each review, identifies positive, negative, and neutral sentiments, extracts key themes, and surfaces actionable insights to help you improve customer satisfaction.",
+            },
+          },
+        ],
+      },
     ],
-    creator: { "@type": "Organization", name: "EazyWebNC", url: "https://eazyweb.nc" },
   };
 
   return (
